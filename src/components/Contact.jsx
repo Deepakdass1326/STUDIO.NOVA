@@ -64,7 +64,7 @@ export default function Contact() {
                         <a
                             href="mailto:deepakdass1326@gmail.com"
                             data-testid="contact-email"
-                            className="font-display text-2xl sm:text-3xl tracking-tight link-reveal"
+                            className="font-display text-xl sm:text-2xl tracking-tight link-reveal break-all"
                         >
                             deepakdass1326@gmail.com
                         </a>
@@ -73,7 +73,7 @@ export default function Contact() {
                         <div className="label-mono mb-3">WhatsApp</div>
                         <a
                             href="mailto:press@studionova.co"
-                            className="font-display text-xl sm:text-2xl tracking-tight text-bone-muted link-reveal"
+                            className="font-display text-lg sm:text-2xl tracking-tight text-bone-muted link-reveal"
                         >
                             +91 7827709125 ↗
                         </a>

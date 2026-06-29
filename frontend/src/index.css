@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 2%;
+        --foreground: 60 20% 95%;
+        --card: 0 0% 6%;
+        --card-foreground: 60 20% 95%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 60 20% 95%;
+        --primary: 60 20% 95%;
+        --primary-foreground: 0 0% 5%;
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 60 20% 95%;
+        --muted: 0 0% 12%;
+        --muted-foreground: 0 0% 64%;
+        --accent: 70 100% 57%;
+        --accent-foreground: 0 0% 5%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 15%;
+        --input: 0 0% 15%;
+        --ring: 70 100% 57%;
+        --radius: 0px;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    html,
+    body {
+        background: #050505;
+        color: #f5f5f0;
+        font-family: "Manrope", system-ui, sans-serif;
+        overflow-x: hidden;
+    }
+    body {
+        margin: 0;
+        cursor: none;
+    }
+    ::selection {
+        background: #d3ff24;
+        color: #050505;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Grain overlay */
+.grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Marquee track helper */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Underline reveal on links */
+.link-reveal {
+    position: relative;
+    display: inline-block;
+}
+.link-reveal::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.link-reveal:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+/* Hover image clip */
+.work-card .work-img {
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.work-card:hover .work-img {
+    transform: scale(1.06);
+}
+
+/* Outline button */
+.btn-acid {
+    background: #d3ff24;
+    color: #050505;
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+    border: 1px solid #d3ff24;
+}
+.btn-acid:hover {
+    background: transparent;
+    color: #d3ff24;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #f5f5f0;
+    border: 1px solid #262626;
+    transition: all 0.4s ease;
+}
+.btn-ghost:hover {
+    border-color: #d3ff24;
+    color: #d3ff24;
+}
+
+/* Loader */
+.loader-bar {
+    transform-origin: left center;
+}
+
+/* For text reveal masking */
+.reveal-mask {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.reveal-line {
+    display: inline-block;
+    transform: translateY(110%);
+}
+
+/* hide cursor on touch devices */
+@media (hover: none) {
+    body {
+        cursor: auto;
+    }
+    .cursor-dot,
+    .cursor-ring {
+        display: none !important;
+    }
+}

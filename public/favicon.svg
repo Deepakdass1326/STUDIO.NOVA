@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0A0A0A"></rect>
+
+  <!-- Left Bar -->
+  <path d="M140 120V392H190V210L322 392H372V120H322V302L190 120H140Z" fill="white"></path>
+
+  <!-- Accent Bar -->
+  <path d="M322 120H372V392H322V120Z" fill="#D3FF24"></path>
+
+  <!-- Inner Triangle -->
+  <path d="M220 220L265 256L220 292V220Z" fill="#D3FF24"></path>
+</svg>

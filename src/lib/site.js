@@ -195,18 +195,12 @@ export const PRICING_TIERS = [
 ];
 
 export const CLIENTS = [
-    "Halcyon",
-    "North Atlas",
-    "Lumen",
-    "Field & Frame",
-    "Verge",
-    "Atelier 9",
-    "Polaris",
-    "Monolith",
-    "Köy",
-    "Mercer",
-    "Anthem",
-    "Heliograph",
+    "Custom Website Development",
+    "Modern UI/UX Design",
+    "AI Integration & Automation",
+    "SaaS & Web Applications",
+    "SEO & Performance Optimization",
+    "E-commerce Solutions",
 ];
 
 export const STATS = [
